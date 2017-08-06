@@ -8,7 +8,7 @@ defmodule Discuss.TopicController do
 
     render conn, "index.html", topics: topics
   end
-
+  
   def new(conn, _params) do
     changeset = Topic.changeset(%Topic{}, %{})
 
@@ -60,5 +60,5 @@ defmodule Discuss.TopicController do
     |> put_flash(:info, "Topic deleted")
     |> redirect(to: topic_path(conn, :index))
   end
-  
+
 end
